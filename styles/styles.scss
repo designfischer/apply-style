@@ -1,0 +1,140 @@
+$lighterGrey: rgb(245, 244, 244);
+$lightGrey: rgb(236, 233, 233);
+$backgroundFilter: rgba(255, 255, 255, 0.75);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+
+    width: 100%;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+
+    background: black;
+    color: rgb(12, 12, 12);
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        background: white;
+
+        max-width: 26em;
+        padding: 1.5em;
+
+        &__header {
+            background: $lighterGrey;
+
+            border-style: solid;
+            border-width: 0.05em;
+            border-color: $lightGrey;
+
+            padding: 0 1em;
+
+            display: flex;
+            justify-content: space-between;;
+            
+            &__content {
+                display: flex;
+                flex-direction: column;                   
+                
+                &__title {
+                    font-weight: bold;
+                    padding: 0.7em 0;
+                }
+
+                &__subtitle {
+                    padding-bottom: 0.7em;
+                }
+            }
+
+            &__header-rating {
+                display: flex; 
+
+                align-items: center;    
+                
+                font-weight: bold;
+                
+                &__stamp {
+                    width: 1.5em;
+                    height: 1.5em;
+
+                    margin-left: 0.3em;
+                }
+            }
+            
+        }
+
+        &__body {
+
+            position: relative;
+
+            &__background {
+                width: 100%;
+               
+                filter: brightness(70%)
+            }
+
+            &__link {
+                position: absolute;
+
+                background: $backgroundFilter;
+                left: 20%;
+                right: 20%;
+
+                width: 60%;
+                height: 2.5em;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-decoration: none;
+
+                color: black;
+                
+                font-size: 1.1em;
+                font-weight: 500;
+
+                border: white;
+                border-style: solid;
+                border-width: 0.15em;
+                border-radius: 1.25em;
+                
+                bottom: 2em;
+
+                transition: 0.5s;
+
+                &:hover {
+                    filter: brightness(75%);
+                }
+            }
+
+        }
+
+        &__footer {
+            margin-top: -0.5em;
+            background: $lighterGrey;
+            padding: 1em;
+
+            border-style: solid;
+            border-width: 0.05em;
+            border-color: $lightGrey;
+
+            &__description {
+                margin: 1em 0;
+                font-size: 1.07em;
+                font-weight: 400;
+            }
+        }
+    }
+}
